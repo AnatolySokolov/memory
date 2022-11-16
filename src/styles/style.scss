@@ -15,3 +15,49 @@ body {
 
   background-color: #1c7430;
 }
+
+.start-game-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-size: 28px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+.start-game-image {
+  order: -1;
+  width: 501px;
+  height: 257px;
+  margin-bottom: 30px;
+
+  vertical-align: middle;
+}
+
+.start-game-link {
+  padding: 10px 20px;
+
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: none;
+  color: rgba(28, 116, 48, 1);
+
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    color: rgba(255, 0, 0, 1);
+  }
+}
