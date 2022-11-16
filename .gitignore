@@ -1,0 +1,25 @@
+# Файлы и папки операционной системы
+.DS_Store
+Thumbs.db
+
+# Файлы редактора
+.idea
+*.sublime*
+.vscode
+
+# Вспомогательные файлы
+*.log*
+node_modules
+
+# Папки с собранными файлами проекта
+build
+public
+dist
+
+# Кэш
+.eslintcache
+.stylelintcache
+.parcel-cache
+
+#Переменные окружения
+.env

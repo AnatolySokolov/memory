@@ -1,0 +1,38 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "build": "NODE_ENV=production webpack",
+    "stylelint": "stylelint \"**/*.scss\" --cache",
+    "stylelint:fix": "stylelint \"**/*.scss\" --cache --fix",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.7.2",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "mini-css-extract-plugin": "^2.6.1",
+    "postcss": "^8.4.19",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.3",
+    "postcss-scss": "^4.0.5",
+    "prettier": "^2.7.1",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-htmlacademy": "^1.1.2",
+    "stylelint-config-prettier": "^9.0.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "lint-staged": {
+    "*.scss": "stylelint --cache --fix",
+    "*.{js,scss,md}": "prettier --write"
+  }
+}

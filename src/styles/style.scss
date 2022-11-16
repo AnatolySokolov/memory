@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "OpenSans Bold";
+  src: local("OpenSans Bold"),
+    url("../fonts/OpenSans/opensans-bold.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+
+  font: 14px/19px "OpenSans Bold", "Helvetica", sans-serif;
+  color: rgba(255, 255, 255, 1);
+
+  background-color: #1c7430;
+}
