@@ -42,7 +42,7 @@ body {
   vertical-align: middle;
 }
 
-.start-game-link {
+.link {
   padding: 10px 20px;
 
   font-size: 16px;
@@ -59,5 +59,64 @@ body {
   &:focus,
   &:hover {
     color: rgba(255, 0, 0, 1);
+  }
+}
+
+.game-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin-bottom: 30px;
+}
+
+.score {
+  margin: 0;
+}
+
+.game-table {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, auto);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.card-item {
+  width: calc(226px * 0.5);
+  height: calc(314px * 0.5);
+  margin: 0 auto 10px auto;
+}
+
+.card {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  cursor: pointer;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+
+  &--is-flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-face {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 7px;
+  backface-visibility: hidden;
+
+  &--front {
+    transform: rotateY(180deg);
   }
 }
