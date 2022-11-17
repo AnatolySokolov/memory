@@ -5,13 +5,18 @@
     "build": "NODE_ENV=production webpack",
     "stylelint": "stylelint \"**/*.scss\" --cache",
     "stylelint:fix": "stylelint \"**/*.scss\" --cache --fix",
-    "prepare": "husky install"
+    "eslint": "eslint \"./src/**/*.js\" --cache",
+    "eslint:fix": "eslint \"./src/**/*.js\" --cache --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.2",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.2",
@@ -32,7 +37,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "lint-staged": {
-    "*.scss": "stylelint --cache --fix",
+    "*.scss": "stylelint \"**/*.scss\" --cache --fix",
+    "*.js": "eslint \"./src/**/*.js\" --cache --fix",
     "*.{js,scss,md}": "prettier --write"
   }
 }

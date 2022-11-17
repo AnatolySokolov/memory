@@ -12,11 +12,13 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   mode,
+  target,
   devtool: 'source-map',
   devServer: {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
+    hot: false,
   },
   entry: {
     index: './src/index.js',
@@ -36,12 +38,7 @@ module.exports = {
       {
         test: /\.s?css$/i,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '',
-            },
-          },
+          MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'sass-loader',
@@ -76,7 +73,7 @@ module.exports = {
         },
       },
       {
-        test: /\.mp3$/,
+        test: /\.(mp3|webm)$/,
         type: 'asset/resource',
         generator: {
           filename: 'sounds/[name][ext][query]',
@@ -86,7 +83,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './src/game.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
