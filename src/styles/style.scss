@@ -16,12 +16,19 @@ body {
   background-color: #1c7430;
 }
 
-.game {
+.container {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
+
+  &--jc {
+    justify-content: center;
+  }
+
+  &--pt30 {
+    padding-top: 30px;
+  }
 }
 
 .title {
@@ -56,18 +63,22 @@ body {
   cursor: pointer;
   outline: none;
 
+  &--mb20 {
+    margin-bottom: 20px;
+  }
+
   &:focus,
   &:hover {
     color: rgba(255, 0, 0, 1);
   }
 }
 
-.game-wrapper {
+.wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .score {
@@ -78,7 +89,10 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(6, auto);
-  width: 100%;
+  justify-content: space-between;
+  align-content: space-around;
+  width: 95%;
+  height: 80vh;
   margin: 0;
   padding: 0;
 
@@ -88,7 +102,6 @@ body {
 .card-item {
   width: calc(226px * 0.5);
   height: calc(314px * 0.5);
-  margin: 0 auto 10px auto;
 }
 
 .card {

@@ -1,15 +1,11 @@
 import './styles/style.scss';
 import './favicons/favicon.ico';
-import './images/cards/index';
 
-function onCardClick(e) {
-  if (e.target.tagName !== 'IMG') return;
+import Router from "./scripts/router";
+import pages from './scripts/router/pages';
 
-  const card = e.target.closest('.card');
+const gameContainer = document.getElementById('game');
 
-  card.classList.toggle('card--is-flipped');
-}
+const router = new Router(pages, gameContainer);
 
-const table = document.querySelector('.game-table');
-
-table.addEventListener('click', (e) => onCardClick(e));
+router.init();

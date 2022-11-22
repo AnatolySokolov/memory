@@ -83,7 +83,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/score.html',
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
