@@ -1,7 +1,9 @@
-import Utils from "../utils";
-import Card from "../card";
+import Utils from '../utils';
+import Card from '../card';
+import GameSound from '../gameSound';
 
 const removePngExtRegExp = /(\.\/)|(\.png)/g;
+const gameSound = new GameSound();
 
 export default class Game {
   constructor({ TOTAL_PAIRS, RATIO, TIME_TO_REMEMBER }) {
@@ -35,6 +37,7 @@ export default class Game {
     if (currentCard === this.firstCard || !this.eventListenerEnabled) return;
 
     currentCard.flip();
+    gameSound.play('open');
 
     // first card
     if (!this.firstCard) {
@@ -58,9 +61,11 @@ export default class Game {
       if (isGuessed) {
         currentCard.remove();
         this.firstCard.remove();
+        gameSound.play('plus');
       } else {
         currentCard.flip();
         this.firstCard.flip();
+        gameSound.play('minus');
       }
 
       this.firstCard = null;
@@ -79,6 +84,7 @@ export default class Game {
       // end game
       if (this.openedPairs === this.TOTAL_PAIRS) {
         this.endGame();
+        gameSound.play('end');
       }
     }, this.TIME_DELAY + 1000);
   }
